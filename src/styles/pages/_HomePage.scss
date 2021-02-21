@@ -1,0 +1,31 @@
+.sign-in-sec {
+    form {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        margin: 0 auto;
+        input {
+            margin-bottom: 0.5rem;
+        }
+        button {
+            width: fit-content;
+            margin: 0 auto;
+        }
+    }
+    .sign-up {
+        color: whitesmoke;
+        &:hover {
+            color: darken($color: $clr3, $amount: 50);
+        }
+    }
+    .bitcoin-gif {
+        width: 5rem;
+    }
+}
+
+.home-page {
+    .home-user-img {
+        background-color: whitesmoke;
+        border-radius: 50%;
+    }
+}

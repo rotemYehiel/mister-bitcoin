@@ -1,0 +1,18 @@
+.transfer-fund {
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    background-color: $clr2;
+    color: whitesmoke;
+    // width: fit-content;
+    // margin: 0 auto;
+    padding: 1rem;
+    .amount-p {
+        label {
+            margin-right: 0.5rem;
+        }
+        input {
+            margin-right: 0.5rem;
+            ;
+        }
+    }
+}

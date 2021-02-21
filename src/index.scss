@@ -1,0 +1,43 @@
+/* SETUP*/
+
+// @import './styles/setup/typography';
+@import './styles/setup/variables';
+@import './styles/setup/mixins';
+// @import 'setup/functions';
+
+/* BASICS*/
+
+// @import 'basics/helpers';
+@import './styles/basics/base';
+@import './styles/basics/layout';
+
+/* PAGES */
+
+@import './styles/pages/ContactPage.scss';
+@import './styles/pages/HomePage.scss';
+@import './styles/pages/SignUp.scss';
+@import './styles/pages/ContactEditPage.scss';
+@import './styles/pages/ContactDetails';
+
+/* CMPS */
+
+// @import './styles/cmps/NavBar.scss';
+@import './styles/cmps/_ContactFilter.scss';
+@import './styles/cmps/_MainHeader.scss';
+@import './styles/cmps/_ContactList.scss';
+@import './styles/cmps/_MovesList.scss';
+@import './styles/cmps/_ContactPreview.scss';
+@import './styles/cmps/_TransferFund.scss';
+@import './styles/cmps/Chart';
+
+/* DEFAULTS */
+
+///////////////////
+body {
+    margin: 0;
+    background-color: $clr5;
+    // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // font-family: Courgette-Regular;
+}

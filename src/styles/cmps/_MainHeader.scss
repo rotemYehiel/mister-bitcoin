@@ -1,0 +1,32 @@
+        .main-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            .main-logo {
+                margin: 0;
+            }
+            .navbar {
+                // font-family: Caveat-Regular;
+                // color: whitesmoke;
+                .nav-link {
+                    // margin: 0.5rem;
+                    padding: 0.5rem;
+                    // border: 0.01rem solid pink;
+                    border-right: 0.01rem solid;
+                    &:last-child {
+                        border-right: none
+                    }
+                }
+                .nav-link:hover {
+                    border-right: 0.01rem solid #ad8093;
+                    color: whitesmoke;
+                    &:last-child {
+                        border-right: none
+                    }
+                }
+            }
+        }

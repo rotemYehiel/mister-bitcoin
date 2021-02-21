@@ -1,0 +1,19 @@
+.contact-preview {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $clr2;
+    border-radius: 0.25rem;
+    .contact-img {
+        margin: 0.5rem;
+        width: 5rem;
+        background-color: $clr5;
+        border-radius: 50%;
+    }
+    .contact-name {
+        padding-right: 0.5rem;
+    }
+    &:hover {
+        background-color: darken($color: $clr3, $amount: 50);
+    }
+}
