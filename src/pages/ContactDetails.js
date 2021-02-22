@@ -49,8 +49,9 @@ const ContactDetails = (props) => {
         return (
             <div className="contact-details page">
                 <section className="contact-section">
-                    <div className="user-img-wrapper">
+                    <div className="user-img-wrapper card-on-feed">
                         <img className="contact-img" src={`https://robohash.org/${contact.name}.png`} alt="" />
+                        <h1>{contact.name}</h1>
                         <section className="btns-sec">
                             <button title="Return" className="buttons" onClick={onGoBackClickHandler}><FontAwesomeIcon icon={faUndo} /></button>
                             <button title="Details" className="buttons">
@@ -59,7 +60,6 @@ const ContactDetails = (props) => {
                             <button title="Remove" className="buttons" onClick={deleteClickHandler}><FontAwesomeIcon icon={faTrashAlt} /></button>
                         </section>
                     </div>
-                    <h1>{contact.name}</h1>
                     <section className="info-section card-on-feed">
                         <p><span><FontAwesomeIcon icon={faEnvelope} /></span>{contact.email}</p>
                         <p><span><FontAwesomeIcon icon={faPhone} /></span>{contact.phone}</p>

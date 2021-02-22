@@ -5,29 +5,22 @@
             justify-content: space-between;
             align-items: center;
             background-color: $clr1;
-            // padding-left: 0.5rem;
-            // padding-right: 0.5rem;
             .main-logo {
                 margin: 0;
-                color: $clr5;
+                color: $clr2;
+                font-family: Roboto-Bold;
             }
             .navbar {
-                // font-family: Caveat-Regular;
-                // color: whitesmoke;
-                color: $clr5;
+                color: $clr2;
                 .nav-link {
-                    // margin: 0.5rem;
                     padding: 0.5rem;
-                    // border: 0.01rem solid pink;
                     border-right: 0.01rem solid;
                     &:last-child {
                         border-right: none
                     }
                 }
                 .nav-link:hover {
-                    // border-right: 0.01rem solid #ad8093;
                     border-right: 0.01rem solid $clr3;
-                    // color: whitesmoke;
                     color: $clr3;
                     &:last-child {
                         border-right: none

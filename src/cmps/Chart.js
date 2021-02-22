@@ -19,7 +19,7 @@ const Chart = (props) => {
                         title: dataToChart.name,
                         subtitle: dataToChart.description,
                     },
-                    colors: ["#ad8093"],
+                    colors: ["#1b78f2"],
                     hAxis: {
                         title: dataToChart.period,
                     },

@@ -4,12 +4,13 @@
                 
                 html {
                     font-family: Neucha-Regular;
-                    color: $clr2;
+                    // color: $clr2;
                 }
                 
                 body {
                     margin: 0;
-                    // font-family: proxima-bold;
+                    font-family: Roboto-Regular;
+                    color: $clr7;
                     background-color: $clr4;
                     overflow-y: scroll;
                     overflow-x: hidden;
@@ -37,24 +38,23 @@
                     border-radius: 0.25rem;
                     border: none;
                     background-color: $clr3;
-                    color: white;
+                    color:$clr8;
                     padding: 0.5rem 0.8rem;
-                    font-family: Caveat-Regular;
                     &:hover {
-                        background-color: darken($color: $clr3, $amount: 50);
+                        background-color: darken($color: $clr3, $amount: 10);
+                        // background-color: darken($color: $clr3, $amount: 50);
                     }
                 }
                 
-                .button-icons {
-                    color: $clr3;
-                    font-size: 1rem;
-                    background-color: transparent;
-                    &:hover {
-                        color: darken($color: $clr3, $amount: 50);
-                        background-color: transparent;
-                    }
-                }
-                
+                // .button-icons {
+                //     color: $clr3;
+                //     font-size: 1rem;
+                //     background-color: transparent;
+                //     &:hover {
+                //         color: darken($color: $clr3, $amount: 50);
+                //         background-color: transparent;
+                //     }
+                // }
                 ////Fixed Elements 
                 a {
                     text-decoration: none;
@@ -69,16 +69,17 @@
                 }
                 
                 .page {
-                    margin: 2vh 10vw;
+                    margin: 0 10vw;
+                    padding: 2vh 0;
                 }
                 
                 .card-on-feed {
                     padding: 1rem;
                     border: 0.1rem solid transparent;
                     border-radius: 0.25rem;
-                    padding: 10px;
+                    padding: 0.6rem;
                     background-color: $clr2;
-                    color: whitesmoke;
+                    color: $clr7;
                     margin: 0.5vh 0 0 0;
                     display: flex;
                     align-items: flex-start;

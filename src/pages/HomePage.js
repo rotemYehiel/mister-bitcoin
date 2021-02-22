@@ -43,9 +43,11 @@ const HomePage = (props) => {
             {(loggedInUser && rate) ? (
                 <div className="user-logged-in">
                     <section className="user-section">
-                        <img className="home-user-img" src={`https://robohash.org/${loggedInUser.name}.png`} alt="" />
-                        <h1>{loggedInUser.name}</h1>
-                        <button onClick={(ev) => onLogOut(ev)} className="log-out-btn">Log out</button>
+                        <div className="user-img-main-wrapper card-on-feed">
+                            <img className="home-user-img" src={`https://robohash.org/${loggedInUser.name}.png`} alt="" />
+                            <h1>{loggedInUser.name}</h1>
+                            <button onClick={(ev) => onLogOut(ev)} className="log-out-btn">Log out</button>
+                        </div>
                         <section className="info-section card-on-feed">
                             <p><span><FontAwesomeIcon icon={faCoins} /></span>{loggedInUser.coins} coins</p>
                             <p><span><FontAwesomeIcon icon={faExchangeAlt} /></span>number of moves: {(loggedInUser.moves) ? loggedInUser.moves.length : 0}</p>

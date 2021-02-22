@@ -14,7 +14,7 @@ const TransferFund = (props) => {
         return <h3>no contact yet...</h3>
     }
     return (
-        <div className="transfer-fund">
+        <div className="transfer-fund card-on-feed">
             <p>Transfer coins to {contact.name}:</p>
             <form onSubmit={(ev) => tranfer(ev)}>
                 <p className="amount-p">
