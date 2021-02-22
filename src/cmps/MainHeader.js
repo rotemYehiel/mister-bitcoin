@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 
 import NavBar from './NavBar'
 
-function MainHeader() {
+const MainHeader = () => {
 
     return (
         <div className="main-header">
             <Link to={'/'}><h1 className="main-logo">Mister Bitcoin</h1></Link>
-
             <NavBar ></NavBar>
         </div>
     )

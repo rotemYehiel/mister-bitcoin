@@ -1,8 +1,11 @@
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-
 import { connect } from 'react-redux';
+
 import { loadUser } from './actions/UserAction';
+import { getRate } from './actions/BitcoinAction';
 
 import './App.css';
 
@@ -13,29 +16,39 @@ import ContactDetails from './pages/ContactDetails'
 import StatisticPage from './pages/StatisticPage'
 import ContactEditPage from './pages/ContactEditPage'
 import SignUpPage from './pages/SignUp'
-import About from './pages/About'
 
-import MainHeader from './cmps/MainHeader'
-
-
+import MainHeader from './cmps/MainHeader';
 
 const history = createBrowserHistory();
 
-function App(props) {
-  props.loadUser()
+const App = (props) => {
+  const { loggedInUser, rate } = props;
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // console.log('props App:', props)
+    const getUser = () => {
+      dispatch(loadUser())
+    }
+    const loadRate = () => {
+      dispatch(getRate())
+    }
+    loadRate();
+    if (!loggedInUser) getUser();
+  }, [loggedInUser, rate])
+
   return (
     <div className="App">
       <Router history={history}>
         <MainHeader />
         <main>
           <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/Contact" exact component={ContactPage} />
-            <Route path="/Contact/Edit/:id?" component={ContactEditPage} />
-            <Route path="/Contact/:id" component={ContactDetails} />
-            <Route path="/Statistic" component={StatisticPage} />
-            <Route path="/SignUp" component={SignUpPage} />
-            <Route path="/About" component={About} />
+            <Route path="/" exact component={HomePage} loggedInUser={loggedInUser} />
+            <Route path="/Contact" exact component={ContactPage} loggedInUser={loggedInUser} />
+            <Route path="/Contact/Edit/:id?" component={ContactEditPage} loggedInUser={loggedInUser} />
+            <Route path="/Contact/:id" component={ContactDetails} loggedInUser={loggedInUser} />
+            <Route path="/Statistic" component={StatisticPage} loggedInUser={loggedInUser} />
+            <Route path="/SignUp" component={SignUpPage} loggedInUser={loggedInUser} />
           </Switch>
         </main>
       </Router>

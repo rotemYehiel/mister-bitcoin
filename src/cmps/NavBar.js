@@ -1,9 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-// import './NavBar.css'
-
-export default (props) => {
+export default () => {
   return (
     <div className="navbar">
       <NavLink className="nav-link" activeClassName="active" exact to="/">Home</NavLink>

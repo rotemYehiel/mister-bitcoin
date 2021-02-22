@@ -14,17 +14,20 @@ const USERS =
         "moves": []
     }]
 
-let loggedInUser = JSON.parse(sessionStorage.getItem('logged user'));
-let usersInStorage = ((sessionStorage.getItem('users'))) ? JSON.parse(sessionStorage.getItem('users')) : _setUsers()
+const loggedInUser = JSON.parse(localStorage.getItem('logged user'));
+// const loggedInUser = null;
 
-async function getUser(credentials) {
-    return (credentials) ? _login(credentials) : loggedInUser
+const usersInStorage = ((localStorage.getItem('users'))) ? JSON.parse(localStorage.getItem('users')) : _setUsers()
+
+function getUser(credentials) {
+
+    return (credentials) ? _login(credentials) : (loggedInUser ? loggedInUser : null)
 }
 async function signUp(user) {
     const newUser = _createUser(user);
     usersInStorage.push(newUser);
-    sessionStorage.setItem('users', JSON.stringify(usersInStorage));
-    sessionStorage.setItem('logged user', JSON.stringify(newUser));
+    localStorage.setItem('users', JSON.stringify(usersInStorage));
+    localStorage.setItem('logged user', JSON.stringify(newUser));
     return getUser();
 }
 async function addMove(contact, amount) {
@@ -42,15 +45,18 @@ async function addMove(contact, amount) {
         }
         const userIdx = usersInStorage.findIndex(currUser => currUser.name === loggedInUser.name)
         usersInStorage.splice(userIdx, 1, loggedInUser)
-        sessionStorage.setItem('users', JSON.stringify(usersInStorage));
-        sessionStorage.setItem('logged user', JSON.stringify(loggedInUser));
+        localStorage.setItem('users', JSON.stringify(usersInStorage));
+        localStorage.setItem('logged user', JSON.stringify(loggedInUser));
     }
     return getUser();
 }
 async function logOut() {
     if (!loggedInUser) return
-    loggedInUser = null;
-    sessionStorage.removeItem('logged user');
+    const user = ''
+    await localStorage.removeItem('logged user');
+    // localStorage.setItem('logged user', JSON.stringify(user))
+    // console.log("loggedInUserin logout:", loggedInUser)
+    return user
 }
 export default {
     getUser,
@@ -59,18 +65,16 @@ export default {
     addMove
 }
 function _login(credentials) {
-    let userFound = usersInStorage.filter(user => {
+    const userFound = usersInStorage.find(user => {
         return (user.name === credentials.name && user.password === credentials.password)
     })
-    userFound = userFound[0];
-    if (userFound) sessionStorage.setItem('logged user', JSON.stringify(userFound));
-    loggedInUser = userFound;
-    return getUser();
-
+    if (userFound) localStorage.setItem('logged user', JSON.stringify(userFound));
+    // console.log("loggedInUser in service:".loggedInUser)//undifine
+    return JSON.parse(localStorage.getItem('logged user'));
 }
 function _setUsers() {
-    sessionStorage.setItem('users', JSON.stringify(USERS))
-    return JSON.parse(sessionStorage.getItem('users'))
+    localStorage.setItem('users', JSON.stringify(USERS))
+    return JSON.parse(localStorage.getItem('users'))
 }
 
 function _createUser(user) {

@@ -3,10 +3,9 @@ import { Chart as GoogleChart } from "react-google-charts";
 
 
 
-export function Chart(props) {
+const Chart = (props) => {
 
     const { dataToChart } = props
-    // console.log(dataToChart.values)
     return (
         <section className="chart-cmp">
             <GoogleChart
