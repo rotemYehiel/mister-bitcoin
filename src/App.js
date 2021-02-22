@@ -4,6 +4,9 @@ import { createBrowserHistory } from 'history';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
 import { loadUser } from './actions/UserAction';
 import { getRate } from './actions/BitcoinAction';
 
@@ -12,12 +15,12 @@ import './App.css';
 import HomePage from './pages/HomePage'
 import ContactPage from './pages/ContactPage'
 import ContactDetails from './pages/ContactDetails'
-
 import StatisticPage from './pages/StatisticPage'
 import ContactEditPage from './pages/ContactEditPage'
 import SignUpPage from './pages/SignUp'
-
 import MainHeader from './cmps/MainHeader';
+
+library.add(fab)
 
 const history = createBrowserHistory();
 
@@ -26,7 +29,6 @@ const App = (props) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    // console.log('props App:', props)
     const getUser = () => {
       dispatch(loadUser())
     }

@@ -16,7 +16,6 @@ const HomePage = (props) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-
     }, [loggedInUser, rate])
 
     const login = async (ev) => {

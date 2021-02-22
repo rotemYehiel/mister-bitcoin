@@ -3,15 +3,18 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            background-color: black;
+            // background-color: black;
+            background-color: $clr1;
             padding-left: 0.5rem;
             padding-right: 0.5rem;
             .main-logo {
                 margin: 0;
+                color: $clr5;
             }
             .navbar {
                 // font-family: Caveat-Regular;
                 // color: whitesmoke;
+                color: $clr5;
                 .nav-link {
                     // margin: 0.5rem;
                     padding: 0.5rem;
@@ -22,8 +25,10 @@
                     }
                 }
                 .nav-link:hover {
-                    border-right: 0.01rem solid #ad8093;
-                    color: whitesmoke;
+                    // border-right: 0.01rem solid #ad8093;
+                    border-right: 0.01rem solid $clr3;
+                    // color: whitesmoke;
+                    color: $clr3;
                     &:last-child {
                         border-right: none
                     }

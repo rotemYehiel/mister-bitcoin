@@ -5,6 +5,8 @@ import moment from 'moment'
 
 export default (props) => {
     const { moves } = props;
+    console.log("render hp?")
+
     return (
         <div className="moves-list">
             <ul className="moves-list-ul">

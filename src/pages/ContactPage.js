@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 import { loadCotnacts } from '../actions/ContactAction';
 
@@ -36,7 +39,7 @@ const ContactPage = (props) => {
             <ContactList contacts={contacts} />
             <button className="add-contact-btn">
                 <Link to={'/Contact/Edit'}>
-                    <i className="fas fa-plus"></i>
+                    <FontAwesomeIcon icon={faPlus} />
                 </Link>
             </button>
         </div>

@@ -3,9 +3,12 @@ import { useDispatch } from 'react-redux';
 
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-//rce
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUndo, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
 import { loadCotnact, deleteContact, clearContact } from '../actions/ContactAction'
-import { addMove } from '../actions/UserAction'
+import { addMove, loadUser } from '../actions/UserAction'
 
 import TransferFund from '../cmps/TransferFund'
 import MovesList from '../cmps/MovesList'
@@ -28,6 +31,7 @@ const ContactDetails = (props) => {
     }
     const onTransferCoins = async (amount) => {
         dispatch(addMove(contact, amount));
+        dispatch(loadUser());
     }
     const deleteClickHandler = async () => {
         props.history.go(-1);
@@ -45,11 +49,11 @@ const ContactDetails = (props) => {
         return (
             <div className="contact-details">
                 <section className="btns-sec">
-                    <button title="Return" className="button-icons" onClick={onGoBackClickHandler}><i className="fas fa-undo"></i></button>
+                    <button title="Return" className="button-icons" onClick={onGoBackClickHandler}><FontAwesomeIcon icon={faUndo} /></button>
                     <button title="Details" className="button-icons">
-                        <Link to={`/Contact/Edit/${contact._id}`}><i className="fas fa-edit"></i></Link>
+                        <Link to={`/Contact/Edit/${contact._id}`}><FontAwesomeIcon icon={faEdit} /></Link>
                     </button>
-                    <button title="Remove" className="button-icons" onClick={deleteClickHandler}><i className="far fa-trash-alt"></i></button>
+                    <button title="Remove" className="button-icons" onClick={deleteClickHandler}><FontAwesomeIcon icon={faTrashAlt} /></button>
                 </section>
                 <img src={`https://robohash.org/${contact.name}.png`} alt="" />
                 <h1>{contact.name}</h1>
