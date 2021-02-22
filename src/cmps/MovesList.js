@@ -1,20 +1,24 @@
 
 import React from 'react'
 import moment from 'moment'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarCheck, faUser } from '@fortawesome/free-solid-svg-icons';
+
 
 
 export default (props) => {
     const { moves } = props;
-    console.log("render hp?")
+    console.log("render hp?", moves)
 
     return (
         <div className="moves-list">
+            {moves.length ? (<h3 className="card-on-feed">Moves</h3>) : (<h3 className="card-on-feed">No moves yet</h3>)}
             <ul className="moves-list-ul">
-                <h3>Your Moves:</h3>
                 {moves.map(move => (
-                    <li key={move.date} className="move">
-                        <p>At: {moment(move.date).format('MMMM Do YYYY, h:mm:ss a')}</p>
-                        <p>Amount: {move.amount} coins</p>
+                    <li key={move.date} className="move card-on-feed">
+                        <p><span><FontAwesomeIcon icon={faCalendarCheck} /></span> {moment(move.date).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                        <p><span><FontAwesomeIcon icon={['fab', 'bitcoin']} /></span>{move.amount} coins</p>
+                        <p><span><FontAwesomeIcon icon={faUser} /></span>mister x</p>
                     </li>
                 ))}
             </ul>

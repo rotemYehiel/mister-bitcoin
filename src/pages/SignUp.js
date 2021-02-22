@@ -21,7 +21,7 @@ const SignUp = (props) => {
     }
 
     return (
-        <div className="sign-up-page">
+        <div className="sign-up-page page">
             <h2>Sign up:</h2>
             <form onSubmit={(ev) => onSignUp(ev)}>
                 <label>Name: </label>

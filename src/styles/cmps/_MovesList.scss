@@ -1,12 +1,7 @@
 .moves-list {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 0.25rem;
-    padding: 0;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    background-color: $clr2;
-    color: whitesmoke;
     .moves-list-ul {
         flex-direction: column;
     }
@@ -15,8 +10,7 @@
         border-bottom: 0.1rem solid $clr6;
     }
     .move {
-        padding: 1rem;
-        background-color: $clr2;
-        border-bottom: 0.1rem solid $clr6;
+        display: flex;
+        flex-direction: column;
     }
 }

@@ -12,7 +12,7 @@ const ContactFilter = (props) => {
     <form className="contact-filter">
       <input
         type="text"
-        placeholder="Enter Contact Name..."
+        placeholder="Search contact by name..."
         onChange={(ev) => onChangeHandler(ev)}
         name="term"
         value={term}

@@ -30,7 +30,7 @@ const StatisticPage = () => {
     }
 
     return (
-        <div>
+        <div className="page">
             <h1>Statistic</h1>
             <Chart dataToChart={marketPrice}></Chart>
             <Chart dataToChart={confirmedTransactions}></Chart>

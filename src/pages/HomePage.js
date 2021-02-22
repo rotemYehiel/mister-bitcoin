@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoins, faExchangeAlt, faChartLine } from '@fortawesome/free-solid-svg-icons';
 
 import { loadUser, logOut } from '../actions/UserAction';
 import { getRate } from '../actions/BitcoinAction';
@@ -37,17 +39,19 @@ const HomePage = (props) => {
     }
 
     return (
-        <div className="home-page">
+        <div className="home-page page">
             {(loggedInUser && rate) ? (
-                <div>
-                    <section>
-                        <h1>Welcome {loggedInUser.name}!</h1>
+                <div className="user-logged-in">
+                    <section className="user-section">
                         <img className="home-user-img" src={`https://robohash.org/${loggedInUser.name}.png`} alt="" />
-                        <h3>you have: {loggedInUser.coins} coins.</h3>
-                        <h3>your moves are: {(loggedInUser.moves) ? loggedInUser.moves.length : 0}.</h3>
-                        <h3>the current rate is: {rate.data}</h3>
+                        <h1>{loggedInUser.name}</h1>
+                        <button onClick={(ev) => onLogOut(ev)} className="log-out-btn">Log out</button>
+                        <section className="info-section card-on-feed">
+                            <p><span><FontAwesomeIcon icon={faCoins} /></span>{loggedInUser.coins} coins</p>
+                            <p><span><FontAwesomeIcon icon={faExchangeAlt} /></span>number of moves: {(loggedInUser.moves) ? loggedInUser.moves.length : 0}</p>
+                            <p><span><FontAwesomeIcon icon={faChartLine} /></span>rate is: {rate.data}</p>
+                        </section>
                     </section>
-                    <button onClick={(ev) => onLogOut(ev)} className="log-out-btn">Log out</button>
                     {loggedInUser.moves && <MovesList moves={loggedInUser.moves} />}
                 </div>
             ) :

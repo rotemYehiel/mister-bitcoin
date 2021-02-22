@@ -34,12 +34,12 @@ const ContactPage = (props) => {
         return <h3>no contacts yet...</h3>
     }
     return (
-        <div className="contact-page">
+        <div className="contact-page page">
             <ContactFilter filterBy={filterBy} onFilter={(termToFilterBy) => onFilterHandler(termToFilterBy)} />
             <ContactList contacts={contacts} />
-            <button className="add-contact-btn">
+            <button className="add-contact-btn button">
                 <Link to={'/Contact/Edit'}>
-                    <FontAwesomeIcon icon={faPlus} />
+                    Add Contact<span><FontAwesomeIcon icon={faPlus} /></span>
                 </Link>
             </button>
         </div>

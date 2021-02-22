@@ -15,6 +15,16 @@
                     overflow-x: hidden;
                 }
                 
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+                
                 // img {
                 //     width: 100%;
                 // }
@@ -56,4 +66,26 @@
                     padding-left: 0.25rem;
                     border-radius: 0.25rem;
                     border: 1px solid darken($color: $clr2, $amount: 12);
+                }
+                
+                .page {
+                    margin: 2vh 10vw;
+                }
+                
+                .card-on-feed {
+                    padding: 1rem;
+                    border: 0.1rem solid transparent;
+                    border-radius: 0.25rem;
+                    padding: 10px;
+                    background-color: $clr2;
+                    color: whitesmoke;
+                    margin: 0.5vh 0 0 0;
+                    display: flex;
+                    align-items: flex-start;
+                    p {
+                        margin: 0.25rem 0;
+                        span {
+                            margin-right: 0.25rem;
+                        }
+                    }
                 }

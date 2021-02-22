@@ -49,7 +49,7 @@ class ContactEditPage extends PureComponent {
     render() {
         const { contact } = this.state;
         return (
-            <div>
+            <div className="page">
                 <h1>Add new contact</h1>
                 <form onSubmit={this.saveContact}>
                     <label>Enter a contact name: </label>

@@ -1,32 +1,46 @@
-.sign-in-sec {
-    form {
+.home-page {
+    .user-logged-in {
         display: flex;
-        flex-direction: column;
-        width: fit-content;
-        margin: 0 auto;
-        input {
-            margin-bottom: 0.5rem;
+        flex-direction: row;
+        height: 100vh;
+        width: 100%;
+        justify-content: space-evenly;
+        .user-section {
+            .home-user-img {
+                background-color: $clr6;
+                border-radius: 50%;
+            }
+            .info-section {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
-        button {
+    }
+    .sign-in-sec {
+        form {
+            display: flex;
+            flex-direction: column;
             width: fit-content;
             margin: 0 auto;
+            input {
+                margin-bottom: 0.5rem;
+            }
+            button {
+                width: fit-content;
+                margin: 0 auto;
+            }
         }
-    }
-    .sign-up {
-        color: whitesmoke;
-        &:hover {
-            color: darken($color: $clr3, $amount: 50);
+        .sign-up {
+            color: whitesmoke;
+            &:hover {
+                color: darken($color: $clr3, $amount: 50);
+            }
         }
-    }
-    .bitcoin-gif {
-        width: 5rem;
+        .bitcoin-gif {
+            width: 5rem;
+        }
     }
 }
 
-.home-page {
-    .home-user-img {
-        // background-color: whitesmoke;
-        background-color: $clr6;
-        border-radius: 50%;
-    }
-}
+.home-page {}
