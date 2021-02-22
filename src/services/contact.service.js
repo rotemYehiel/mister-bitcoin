@@ -144,7 +144,6 @@ function getContactById(id) {
   return new Promise((resolve, reject) => {
     const contact = contacts.find(contact => contact._id === id)
     contact ? resolve(contact) : reject(`Contact id ${id} not found!`)
-    // console.log('service:', contact)
   })
 }
 
@@ -178,7 +177,6 @@ function _addContact(contact) {
 }
 
 function saveContact(contact) {
-  // console.log(contact)
   return contact._id ? _updateContact(contact) : _addContact(contact)
 }
 

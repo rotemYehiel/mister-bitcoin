@@ -25,7 +25,6 @@ const ContactDetails = (props) => {
 
 
     const getContactById = async () => {
-        console.log(props.match.params.id)
         const id = props.match.params.id;
         dispatch(loadCotnact(id));
     }
@@ -77,7 +76,6 @@ const ContactDetails = (props) => {
 
 }
 const mapStateToProps = (state) => {
-    // console.log('state in ContactDetails:', state.user.loggedInUser)
     return {
         contact: state.contact.contact,
         loggedInUser: state.user.loggedInUser

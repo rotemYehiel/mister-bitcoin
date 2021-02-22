@@ -8,7 +8,6 @@ import { faCalendarCheck, faUser } from '@fortawesome/free-solid-svg-icons';
 
 export default (props) => {
     const { moves } = props;
-    console.log("render hp?", moves)
 
     return (
         <div className="moves-list">

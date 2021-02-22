@@ -14,12 +14,13 @@ const SignUp = (props) => {
         ev.preventDefault();
         const newUser = { name: name, password: password };
         await dispatch(signUp(newUser));
+        resetForm();
+        props.history.push('/');
+    }
+    const resetForm = () => {
         setName('');
         setPassword('');
-        props.history.push('/');
-
     }
-
     return (
         <div className="sign-up-page page">
             <h2>Sign up:</h2>

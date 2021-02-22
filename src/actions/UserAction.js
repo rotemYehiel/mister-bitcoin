@@ -4,13 +4,11 @@ export function loadUser(userCredentials) {
     if (userCredentials) {
         return async dispatch => {
             const loggedInUser = await UserService.getUser(userCredentials);
-            console.log("loggedInUser in action:", loggedInUser)
             dispatch({ type: 'SET_USER', loggedInUser })
         }
     } else {
         return async dispatch => {
             const loggedInUser = await UserService.getUser();
-            console.log("no cred action:", loggedInUser)
             dispatch({ type: 'SET_USER', loggedInUser })
         }
 

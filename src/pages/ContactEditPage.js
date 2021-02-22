@@ -1,86 +1,78 @@
-import React, { PureComponent } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
+
 
 import { loadCotnact, saveContact } from '../actions/ContactAction';
 
-class ContactEditPage extends PureComponent {
-    state = {
-        contact: {
-            _id: '',
-            name: '',
-            email: '',
-            phone: ''
+const ContactEditPage = (props) => {
+    const dispatch = useDispatch()
+    const [contact, setContact] = useState({
+        _id: '',
+        name: '',
+        email: '',
+        phone: ''
 
+    })
+    useEffect(() => {
+        const id = props.match.params.id;
+        const getContact = async () => {
+            await dispatch(loadCotnact(id))
+            setContact(props.contact)
         }
-    }
+        if (id) getContact()
+    }, [props.match.params])
 
-    componentDidMount = async () => {
-        const id = this.props.match.params.id;
-        if (id) {
-            await this.props.loadCotnact(id)
-            this.setState({ contact: { ...this.props.contact } })
-            // const currContact = await ContactService.getContactById(id);
-            // console.log(this.props.contact)
-        }
-
-    }
-
-    saveContact = async (ev) => {
+    const saveNewContact = async (ev) => {
         ev.preventDefault();
-        await this.props.saveContact(this.state.contact)
-        // const contact = await this.props.saveContact(this.state.contact)
-        // const contact = await ContactService.saveContact(this.state.contact);
-        // console.log('contact', contact);
-        this.props.history.go(-1);
+        await dispatch(saveContact(contact))
+        props.history.go(-1);
 
     }
-    handleChange = (ev) => {
-
+    const handleChange = (ev) => {
+        ev.preventDefault();
         const { name, value } = ev.target;
-        this.setState((prevState) => {
-            return {
-                contact: {
-                    ...prevState.contact,
-                    [name]: value
-                },
-            };
-        });
+        setContact({
+            ...contact,
+            [name]: value
+        })
+
     }
-    render() {
-        const { contact } = this.state;
-        return (
-            <div className="page">
-                <h1>Add new contact</h1>
-                <form onSubmit={this.saveContact}>
-                    <label>Enter a contact name: </label>
-                    <input
-                        type="text"
-                        placeholder="Contact Name"
-                        name="name"
-                        value={contact.name}
-                        onChange={this.handleChange}
-                    />
-                    <label>Enter email: </label>
-                    <input
-                        type="email"
-                        placeholder="Contact Email"
-                        name="email"
-                        value={contact.email}
-                        onChange={this.handleChange}
-                    />
-                    <label>Enter phone number: </label>
-                    <input
-                        type="tel"
-                        placeholder="Phone Number"
-                        name="phone"
-                        value={contact.phone}
-                        onChange={this.handleChange}
-                    />
-                    <button>Save</button>
-                </form>
-            </div>
-        )
-    }
+
+
+    return (
+        <div className="page">
+            {contact._id ? (<h1>Edit: {contact.name}</h1>) : (<h1>Add new contact</h1>)}
+            <form onSubmit={(ev) => saveNewContact(ev)}>
+                <label>Enter a contact name: </label>
+                <input
+                    type="text"
+                    placeholder="Contact Name"
+                    name="name"
+                    value={contact.name}
+                    onChange={(ev) => handleChange(ev)}
+                />
+                <label>Enter email: </label>
+                <input
+                    type="email"
+                    placeholder="Contact email"
+                    name="email"
+                    value={contact.email}
+                    onChange={(ev) => handleChange(ev)}
+                />
+                <label>Enter phone number: </label>
+                <input
+                    type="tel"
+                    placeholder="Phone number"
+                    name="phone"
+                    value={contact.phone}
+                    onChange={(ev) => handleChange(ev)}
+                />
+                <button>Save</button>
+            </form>
+        </div>
+    )
+
 }
 
 

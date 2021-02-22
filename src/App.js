@@ -59,7 +59,6 @@ const App = (props) => {
 }
 const mapStateToProps = (state) => {
   // console.count('calls to state in App')
-  // console.log('loggedInUser in state in App:', state.user.loggedInUser)
   return {
     loggedInUser: state.user.loggedInUser,
   }

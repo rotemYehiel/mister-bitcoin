@@ -54,8 +54,6 @@ async function logOut() {
     if (!loggedInUser) return
     const user = ''
     await localStorage.removeItem('logged user');
-    // localStorage.setItem('logged user', JSON.stringify(user))
-    // console.log("loggedInUserin logout:", loggedInUser)
     return user
 }
 export default {
@@ -69,7 +67,6 @@ function _login(credentials) {
         return (user.name === credentials.name && user.password === credentials.password)
     })
     if (userFound) localStorage.setItem('logged user', JSON.stringify(userFound));
-    // console.log("loggedInUser in service:".loggedInUser)//undifine
     return JSON.parse(localStorage.getItem('logged user'));
 }
 function _setUsers() {
@@ -83,7 +80,7 @@ function _createUser(user) {
         "name": user.name,
         "password": user.password,
         "coins": 100,
-        "moves:": []
+        "moves": []
     }
 }
 function _makeId(length = 10) {
