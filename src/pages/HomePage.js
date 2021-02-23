@@ -27,15 +27,18 @@ const HomePage = (props) => {
             password: password
         }
         dispatch(loadUser(userCredentials));
-        dispatch(getRate())
+        resetForm();
+        dispatch(getRate());
     }
 
     const onLogOut = async (ev) => {
         ev.preventDefault();
+        dispatch(logOut());
+        // props.history.push('/');
+    }
+    const resetForm = () => {
         setUserName('');
         setPassword('');
-        dispatch(logOut());
-        props.history.push('/');
     }
 
     return (

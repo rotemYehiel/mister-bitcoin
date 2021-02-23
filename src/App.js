@@ -37,6 +37,7 @@ const App = (props) => {
     }
     loadRate();
     if (!loggedInUser) getUser();
+    console.log("loggedInUser in app:", loggedInUser)
   }, [loggedInUser, rate])
 
   return (

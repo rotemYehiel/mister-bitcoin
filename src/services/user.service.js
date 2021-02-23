@@ -15,12 +15,11 @@ const USERS =
     }]
 
 const loggedInUser = JSON.parse(localStorage.getItem('logged user'));
-// const loggedInUser = null;
 
 const usersInStorage = ((localStorage.getItem('users'))) ? JSON.parse(localStorage.getItem('users')) : _setUsers()
 
 function getUser(credentials) {
-
+    console.log("credentials in service:", credentials)
     return (credentials) ? _login(credentials) : (loggedInUser ? loggedInUser : null)
 }
 async function signUp(user) {
@@ -50,11 +49,8 @@ async function addMove(contact, amount) {
     }
     return getUser();
 }
-async function logOut() {
-    if (!loggedInUser) return
-    const user = ''
-    await localStorage.removeItem('logged user');
-    return user
+function logOut() {
+    localStorage.removeItem('logged user');
 }
 export default {
     getUser,

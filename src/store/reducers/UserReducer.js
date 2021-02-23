@@ -6,7 +6,7 @@ export default function UserReducer(state = initialState, action) {
         case 'SET_USER':
             return {
                 ...state,
-                loggedInUser: action.loggedInUser
+                loggedInUser: (action.loggedInUser) ? action.loggedInUser : null
             }
         case 'SET_USER_MOVES':
             return {

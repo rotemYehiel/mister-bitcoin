@@ -1,22 +1,15 @@
 import UserService from '../services/user.service'
 
-export function loadUser(userCredentials) {
-    if (userCredentials) {
-        return async dispatch => {
-            const loggedInUser = await UserService.getUser(userCredentials);
-            dispatch({ type: 'SET_USER', loggedInUser })
-        }
-    } else {
-        return async dispatch => {
-            const loggedInUser = await UserService.getUser();
-            dispatch({ type: 'SET_USER', loggedInUser })
-        }
-
+export function loadUser(userCredentials = null) {
+    return async dispatch => {
+        const loggedInUser = await UserService.getUser(userCredentials);
+        dispatch({ type: 'SET_USER', loggedInUser })
     }
+
 }
 export function logOut() {
-    return async dispatch => {
-        await UserService.logOut();
+    return dispatch => {
+        UserService.logOut();
         dispatch({ type: 'SET_USER', loggedInUser: null })
     }
 }
