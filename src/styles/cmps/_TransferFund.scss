@@ -1,4 +1,6 @@
 .transfer-fund {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 0.5rem;
     color: $clr7;
     .amount-p {

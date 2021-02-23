@@ -5,13 +5,14 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUndo, faEdit, faTrashAlt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faUndo, faEdit, faTrashAlt, faEnvelope, faPhone, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { loadCotnact, deleteContact, clearContact } from '../actions/ContactAction'
 import { addMove, loadUser } from '../actions/UserAction'
 
 import TransferFund from '../cmps/TransferFund'
 import MovesList from '../cmps/MovesList'
+
 
 
 const ContactDetails = (props) => {
@@ -52,11 +53,11 @@ const ContactDetails = (props) => {
                         <img className="contact-img" src={`https://robohash.org/${contact.name}.png`} alt="" />
                         <h1>{contact.name}</h1>
                         <section className="btns-sec">
-                            <button title="Return" className="buttons" onClick={onGoBackClickHandler}><FontAwesomeIcon icon={faUndo} /></button>
-                            <button title="Details" className="buttons">
-                                <Link to={`/Contact/Edit/${contact._id}`}><FontAwesomeIcon icon={faEdit} /></Link>
-                            </button>
-                            <button title="Remove" className="buttons" onClick={deleteClickHandler}><FontAwesomeIcon icon={faTrashAlt} /></button>
+                            <button title="Return" className="buttons icon-btn" onClick={onGoBackClickHandler}><FontAwesomeIcon icon={faUndo} /></button>
+                            <Link title="Details" type="button" className="buttons icon-btn" to={`/Contact/Edit/${contact._id}`}>
+                                <FontAwesomeIcon icon={faEdit} />
+                            </Link>
+                            <button title="Remove" className="buttons icon-btn" onClick={deleteClickHandler}><FontAwesomeIcon icon={faTrashAlt} /></button>
                         </section>
                     </div>
                     <section className="info-section card-on-feed">

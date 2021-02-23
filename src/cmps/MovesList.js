@@ -17,7 +17,6 @@ export default (props) => {
                     <li key={move.date} className="move card-on-feed">
                         <p><span><FontAwesomeIcon icon={faCalendarCheck} /></span> {moment(move.date).format('MMMM Do YYYY, h:mm:ss a')}</p>
                         <p><span><FontAwesomeIcon icon={['fab', 'bitcoin']} /></span>{move.amount} coins</p>
-                        <p><span><FontAwesomeIcon icon={faUser} /></span>mister x</p>
                     </li>
                 ))}
             </ul>

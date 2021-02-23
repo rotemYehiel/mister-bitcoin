@@ -1,6 +1,8 @@
 import React from 'react';
 import { Chart as GoogleChart } from "react-google-charts";
 
+import bitcoinGif from '../assets/imgs/bitcoin-gif.gif'
+
 
 
 const Chart = (props) => {
@@ -12,7 +14,7 @@ const Chart = (props) => {
                 max-width={'fit-contant'}
                 height={'400px'}
                 chartType="Line"
-                // loader={<div>Loading Chart</div>}
+                loader={<img style={{ width: '5vw' }} src={bitcoinGif} alt="bitcoin gif" />}
                 data={dataToChart.values}
                 options={{
                     chart: {
