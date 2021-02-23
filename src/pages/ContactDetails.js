@@ -10,8 +10,10 @@ import { faUndo, faEdit, faTrashAlt, faEnvelope, faPhone, faSpinner } from '@for
 import { loadCotnact, deleteContact, clearContact } from '../actions/ContactAction'
 import { addMove, loadUser } from '../actions/UserAction'
 
-import TransferFund from '../cmps/TransferFund'
-import MovesList from '../cmps/MovesList'
+import TransferFund from '../cmps/TransferFund';
+import MovesList from '../cmps/MovesList';
+
+import bitcoinGif from '../assets/imgs/bitcoin-gif.gif';
 
 
 
@@ -31,7 +33,6 @@ const ContactDetails = (props) => {
     }
     const onTransferCoins = async (amount) => {
         dispatch(addMove(contact, amount));
-        dispatch(loadUser());
     }
     const deleteClickHandler = async () => {
         props.history.go(-1);
@@ -41,10 +42,13 @@ const ContactDetails = (props) => {
     const onGoBackClickHandler = (ev) => {
         props.history.go(-1);
     }
+    const onGoHome = (ev) => {
+        props.history.go(-2);
+    }
 
-    if (!loggedInUser) return <div>Please login first</div>
+    if (!loggedInUser) return (<div>Please login first <button className="buttons" onClick={(ev) => onGoHome(ev)}>Go Back</button></div>)
     if (!contact) {
-        return <div>Loading... </div>;
+        return <img style={{ width: '5vw' }} src={bitcoinGif} alt="bitcoin gif" />;
     } else {
         return (
             <div className="contact-details page">

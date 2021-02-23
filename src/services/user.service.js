@@ -19,7 +19,6 @@ const loggedInUser = JSON.parse(localStorage.getItem('logged user'));
 const usersInStorage = ((localStorage.getItem('users'))) ? JSON.parse(localStorage.getItem('users')) : _setUsers()
 
 function getUser(credentials) {
-    console.log("credentials in service:", credentials)
     return (credentials) ? _login(credentials) : (loggedInUser ? loggedInUser : null)
 }
 async function signUp(user) {

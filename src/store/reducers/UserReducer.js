@@ -13,6 +13,7 @@ export default function UserReducer(state = initialState, action) {
                 ...state,
                 loggedInUser: { ...state.loggedInUser, moves: action.moves }
             }
+
         default:
             return state;
     }
