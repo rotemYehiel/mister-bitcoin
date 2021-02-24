@@ -42,7 +42,7 @@ const ContactEditPage = (props) => {
 
     return (
         <div className="contact-edit page">
-            {contact._id ? (<h1>Edit: {contact.name}</h1>) : (<h1>Add new contact</h1>)}
+            {contact._id ? (<h1 className="page-header">Edit {contact.name}</h1>) : (<h1 className="page-header">Add new contact</h1>)}
             <form onSubmit={(ev) => saveNewContact(ev)}>
                 <label>Enter a contact name: </label>
                 <input
