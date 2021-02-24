@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/mister-bitcoin/static/css/main.57115d89.chunk.css",
-    "main.js": "/mister-bitcoin/static/js/main.86d9e46c.chunk.js",
-    "main.js.map": "/mister-bitcoin/static/js/main.86d9e46c.chunk.js.map",
+    "main.css": "/mister-bitcoin/static/css/main.9be3b32f.chunk.css",
+    "main.js": "/mister-bitcoin/static/js/main.ce1113a2.chunk.js",
+    "main.js.map": "/mister-bitcoin/static/js/main.ce1113a2.chunk.js.map",
     "runtime-main.js": "/mister-bitcoin/static/js/runtime-main.c697e83d.js",
     "runtime-main.js.map": "/mister-bitcoin/static/js/runtime-main.c697e83d.js.map",
     "static/js/2.3d3cc687.chunk.js": "/mister-bitcoin/static/js/2.3d3cc687.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.cfdc4d9b.chunk.js": "/mister-bitcoin/static/js/3.cfdc4d9b.chunk.js",
     "static/js/3.cfdc4d9b.chunk.js.map": "/mister-bitcoin/static/js/3.cfdc4d9b.chunk.js.map",
     "index.html": "/mister-bitcoin/index.html",
-    "static/css/main.57115d89.chunk.css.map": "/mister-bitcoin/static/css/main.57115d89.chunk.css.map",
+    "static/css/main.9be3b32f.chunk.css.map": "/mister-bitcoin/static/css/main.9be3b32f.chunk.css.map",
     "static/js/2.3d3cc687.chunk.js.LICENSE.txt": "/mister-bitcoin/static/js/2.3d3cc687.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/mister-bitcoin/static/media/Roboto-Regular.03523cf5.ttf",
     "static/media/bitcoin-gif.40cb03d6.gif": "/mister-bitcoin/static/media/bitcoin-gif.40cb03d6.gif"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.c697e83d.js",
     "static/js/2.3d3cc687.chunk.js",
-    "static/css/main.57115d89.chunk.css",
-    "static/js/main.86d9e46c.chunk.js"
+    "static/css/main.9be3b32f.chunk.css",
+    "static/js/main.ce1113a2.chunk.js"
   ]
 }
