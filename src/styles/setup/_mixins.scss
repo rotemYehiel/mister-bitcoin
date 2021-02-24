@@ -6,6 +6,12 @@
     }
 }
 
+@mixin for-smaller-narrow-layout {
+    @media (max-width: $break-smaller-narrow) {
+        @content;
+    }
+}
+
 @mixin for-narrow-layout {
     @media (max-width: $break-narrow) {
         @content;

@@ -5,6 +5,9 @@
     @include for-mobile-layout {
         max-width: $break-mobile;
     }
+    @include for-smaller-narrow-layout {
+        max-width: $break-smaller-narrow;
+    }
     @include for-narrow-layout {
         max-width: $break-narrow;
     }

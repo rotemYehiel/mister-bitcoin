@@ -1,16 +1,16 @@
 .contact-details {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     .contact-section {
+        width: 50%;
         .user-img-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             .contact-img {
                 background-color: $clr6;
-                border-radius: 1rem;
-                width: 30vw;
+                border-radius: 50%;
                 margin-bottom: 0.6rem;
             }
             h1 {
@@ -35,5 +35,38 @@
     .btns-sec {
         display: flex;
         flex-direction: column;
+    }
+    .feed-section {
+        width: 45%;
+    }
+}
+
+@include for-narrow-layout {
+    .contact-details {
+        .contact-section {
+            width: 50%;
+            .user-img-wrapper {
+                .contact-img {
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+@include for-smaller-narrow-layout {
+    .contact-details {
+        flex-direction: column;
+        .contact-section {
+            width: 100%;
+            .user-img-wrapper {
+                .contact-img {
+                    width: 70%;
+                }
+            }
+        }
+        .feed-section {
+            width: 100%;
+        }
     }
 }

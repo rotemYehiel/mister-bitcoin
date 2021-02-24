@@ -81,7 +81,7 @@ const HomePage = (props) => {
                         />
                         <button className="buttons" type="submit">Go</button>
                     </form>
-                    <h2 className="page-header">New arround?
+                    <h2 className="page-header text">New arround?
                         <span className="sign-up">
                             <Link to={'/SignUp'}>  Sign up now</Link>
                         </span>
