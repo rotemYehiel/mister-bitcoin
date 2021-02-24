@@ -57,7 +57,7 @@ const HomePage = (props) => {
                             <p><span><FontAwesomeIcon icon={faChartLine} /></span>rate is: {rate.data}</p>
                         </section>
                     </section>
-                    {loggedInUser.moves && <MovesList moves={loggedInUser.moves} />}
+                    {loggedInUser.moves && <div className="move-list-section" ><MovesList moves={loggedInUser.moves} /></div>}
                 </div>
             ) :
                 (<section className="sign-in-sec">

@@ -1,5 +1,6 @@
         .main-header {
-            padding: 0 10vw;
+            height: 8vh;
+            padding: 0 20vw;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -9,6 +10,10 @@
                 margin: 0;
                 color: $clr2;
                 font-family: Roboto-Bold;
+                font-size: 2rem;
+            }
+            .mobile-logo {
+                display: none;
             }
             .navbar {
                 color: $clr2;
@@ -25,6 +30,69 @@
                     &:last-child {
                         border-right: none
                     }
+                }
+            }
+            .menu-wrapper {
+                display: none;
+            }
+        }
+        
+        @include for-wide-layout {
+            .main-header {
+                padding: 0 10vw;
+            }
+        }
+        
+        @include for-narrow-layout {
+            .main-header {
+                .main-link {
+                    order: 1;
+                }
+                .navbar-wrapper {
+                    display: none;
+                }
+                .menu-wrapper {
+                    display: flex;
+                    width: 30vw;
+                    height: 92vh;
+                    margin-top: 8vh;
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    left: -30vw;
+                    transition: all 500ms linear;
+                }
+                .menu-open {
+                    left: 0;
+                }
+            }
+        }
+        
+        @include for-mobile-layout {
+            .main-header {
+                padding: 0 5vw;
+                .main-logo {
+                    display: none;
+                }
+                .mobile-logo {
+                    display: block;
+                    svg {
+                        color: $clr2;
+                        font-size: 2.5rem;
+                    }
+                }
+                .menu-wrapper {
+                    margin-top: 8vh;
+                    position: absolute;
+                    z-index: 1;
+                    width: 100vw;
+                    height: 92vh;
+                    top: -108vh;
+                    left: 0;
+                    transition: all 500ms linear;
+                }
+                .menu-open {
+                    top: 0;
                 }
             }
         }

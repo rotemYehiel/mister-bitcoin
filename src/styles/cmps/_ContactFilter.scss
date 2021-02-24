@@ -5,3 +5,15 @@
         padding: 1.5vh 1vw;
     }
 }
+
+@include for-narrow-layout {
+    .contact-filter {
+        width: 80%;
+    }
+}
+
+@include for-mobile-layout {
+    .contact-filter {
+        width: 100%;
+    }
+}

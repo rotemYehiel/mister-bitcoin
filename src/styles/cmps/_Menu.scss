@@ -1,0 +1,28 @@
+.menu {
+    display: flex;
+    background-color: $clr1;
+    width: 100%;
+    text-align: center;
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .nav-link {
+            border-right: none;
+            border-bottom: 0.01rem solid;
+            padding: 1rem;
+        }
+    }
+}
+
+@include for-mobile-layout {
+    .menu {
+        .navbar {
+            .nav-link {
+                border-right: none;
+                border-bottom: 0.01rem solid;
+                padding: 1.2rem;
+            }
+        }
+    }
+}

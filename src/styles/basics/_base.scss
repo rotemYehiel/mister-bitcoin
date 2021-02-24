@@ -9,6 +9,7 @@
                 
                 body {
                     margin: 0;
+                    font-size: 16px;
                     font-family: Roboto-Regular;
                     color: $clr7;
                     background-color: $clr4;
@@ -60,12 +61,27 @@
                 }
                 
                 .page {
-                    margin: 0 10vw;
+                    margin: 0 20vw;
                     padding: 2vh 0;
                 }
                 
                 .page-header {
                     margin-bottom: 0.5rem;
+                }
+                
+                .icon-btn {
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    border-radius: 50%;
+                    font-size: 0.8rem;
+                    margin: 0;
+                    padding: 0.8rem;
+                    background-color: $clr3;
+                    color: #1d1f23;
+                    &:hover {
+                        background-color: darken($color: $clr3, $amount: 10);
+                    }
                 }
                 
                 .card-on-feed {
@@ -83,5 +99,19 @@
                         span {
                             margin-right: 0.25rem;
                         }
+                    }
+                }
+                
+                @include for-wide-layout {
+                    .page {
+                        margin: 0 10vw;
+                        padding: 2vh 0;
+                    }
+                }
+                
+                @include for-mobile-layout {
+                    .page {
+                        margin: 0 5vw;
+                        padding: 2vh 0;
                     }
                 }
