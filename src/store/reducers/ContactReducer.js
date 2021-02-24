@@ -1,6 +1,3 @@
-
-
-///initialState must be sicrony
 const initialState = {
     contacts: [],
     contact: null

@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUndo, faEdit, faTrashAlt, faEnvelope, faPhone, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { loadCotnact, deleteContact, clearContact } from '../actions/ContactAction'
-import { addMove, loadUser } from '../actions/UserAction'
+import { addMove } from '../actions/UserAction'
 
 import TransferFund from '../cmps/TransferFund';
 import MovesList from '../cmps/MovesList';
@@ -39,10 +39,10 @@ const ContactDetails = (props) => {
         dispatch(deleteContact(contact._id))
     }
 
-    const onGoBackClickHandler = (ev) => {
+    const onGoBackClickHandler = () => {
         props.history.go(-1);
     }
-    const onGoHome = (ev) => {
+    const onGoHome = () => {
         props.history.go(-2);
     }
 

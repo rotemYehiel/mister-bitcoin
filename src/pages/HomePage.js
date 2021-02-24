@@ -34,7 +34,6 @@ const HomePage = (props) => {
     const onLogOut = async (ev) => {
         ev.preventDefault();
         dispatch(logOut());
-        // props.history.push('/');
     }
     const resetForm = () => {
         setUserName('');
@@ -96,7 +95,6 @@ const HomePage = (props) => {
 
 }
 const mapStateToProps = (state) => {
-    // console.count('calls to state in HomePage')
     return {
         loggedInUser: state.user.loggedInUser,
         rate: state.bitcoin.rate

@@ -3,13 +3,10 @@
 @import './styles/setup/typography';
 @import './styles/setup/variables';
 @import './styles/setup/mixins';
-// @import 'setup/functions';
 
 /* BASICS*/
 
-// @import 'basics/helpers';
 @import './styles/basics/base';
-@import './styles/basics/layout';
 
 /* PAGES */
 
@@ -18,10 +15,10 @@
 @import './styles/pages/SignUp.scss';
 @import './styles/pages/ContactEditPage.scss';
 @import './styles/pages/ContactDetails';
+@import './styles/pages/StatisticPage';
 
 /* CMPS */
 
-// @import './styles/cmps/NavBar.scss';
 @import './styles/cmps/_ContactFilter.scss';
 @import './styles/cmps/_MainHeader.scss';
 @import './styles/cmps/_ContactList.scss';

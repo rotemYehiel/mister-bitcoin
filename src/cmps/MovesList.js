@@ -4,8 +4,6 @@ import moment from 'moment'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 
-
-
 export default (props) => {
     const { moves } = props;
 

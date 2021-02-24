@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 
-
 import { loadCotnact, saveContact } from '../actions/ContactAction';
 
 const ContactEditPage = (props) => {
@@ -38,7 +37,6 @@ const ContactEditPage = (props) => {
         })
 
     }
-
 
     return (
         <div className="contact-edit page">

@@ -1,5 +1,5 @@
         .main-header {
-            height: 8vh;
+            height: 5vh;
             padding: 0 20vw;
             display: flex;
             flex-direction: row;
@@ -39,6 +39,7 @@
         
         @include for-wide-layout {
             .main-header {
+                height: 6vh;
                 padding: 0 10vw;
             }
         }
@@ -54,8 +55,8 @@
                 .menu-wrapper {
                     display: flex;
                     width: 30vw;
-                    height: 92vh;
-                    margin-top: 8vh;
+                    height: 94vh;
+                    margin-top: 6vh;
                     position: absolute;
                     z-index: 1;
                     top: 0;
@@ -71,6 +72,7 @@
         @include for-mobile-layout {
             .main-header {
                 padding: 0 5vw;
+                height: 8vh;
                 .main-logo {
                     display: none;
                 }

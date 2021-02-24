@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import moment from 'moment';
 
 const RATE_URL = 'https://blockchain.info/tobtc?currency=USD&value=1';
 const MARKET_PRICE_URL = 'https://api.blockchain.info/charts/market-price?timespan=5months&format=json&cors=true';
@@ -34,7 +33,6 @@ async function getStatisticsValues(type) {
             period: req.data.period,
             unit: req.data.unit,
             values: valuesToShow
-            // values: marketPriceValues.data.values.map(value => [moment(value.x * 1000).format('MMM Do YYYY'), value.y])
         }
         localStorage.setItem(type, JSON.stringify(statistics));
     }
