@@ -34,6 +34,7 @@ const HomePage = (props) => {
     const onLogOut = async (ev) => {
         ev.preventDefault();
         dispatch(logOut());
+        // dispatch(loadUser());
     }
     const resetForm = () => {
         setUserName('');

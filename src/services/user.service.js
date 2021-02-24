@@ -14,12 +14,11 @@ const USERS =
         "moves": []
     }]
 
-const loggedInUser = JSON.parse(localStorage.getItem('logged user'));
-
 const usersInStorage = ((localStorage.getItem('users'))) ? JSON.parse(localStorage.getItem('users')) : _setUsers()
 
 function getUser(credentials) {
-    return (credentials) ? _login(credentials) : (loggedInUser ? loggedInUser : null)
+    const user = JSON.parse(localStorage.getItem('logged user'));
+    return (credentials) ? _login(credentials) : (user ? user : null)
 }
 async function signUp(user) {
     const newUser = _createUser(user);
@@ -28,24 +27,26 @@ async function signUp(user) {
     localStorage.setItem('logged user', JSON.stringify(newUser));
     return getUser();
 }
-async function addMove(contact, amount) {
-    if (loggedInUser.coins >= amount) {
-        loggedInUser.coins -= amount;
+function addMove(contact, amount) {
+    const user = JSON.parse(localStorage.getItem('logged user'))
+    if (user.coins >= amount) {
+        user.coins -= amount;
         let move = {
             date: new Date(),
             amount: amount,
             to: contact._id
         }
-        if (loggedInUser.moves) {
-            loggedInUser.moves.unshift(move)
+        if (user.moves) {
+            user.moves.unshift(move)
         } else {
-            loggedInUser.moves = [move]
+            user.moves = [move]
         }
-        const userIdx = usersInStorage.findIndex(currUser => currUser.name === loggedInUser.name)
-        usersInStorage.splice(userIdx, 1, loggedInUser)
+        const userIdx = usersInStorage.findIndex(currUser => currUser.name === user.name)
+        usersInStorage.splice(userIdx, 1, user)
         localStorage.setItem('users', JSON.stringify(usersInStorage));
-        localStorage.setItem('logged user', JSON.stringify(loggedInUser));
+        localStorage.setItem('logged user', JSON.stringify(user));
     }
+
     return getUser();
 }
 function logOut() {
