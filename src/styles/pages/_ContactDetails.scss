@@ -57,6 +57,7 @@
 @include for-smaller-narrow-layout {
     .contact-details {
         flex-direction: column;
+        justify-content: unset;
         .contact-section {
             width: 100%;
             .user-img-wrapper {
