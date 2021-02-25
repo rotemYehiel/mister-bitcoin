@@ -8,10 +8,10 @@ export default function UserReducer(state = initialState, action) {
                 ...state,
                 loggedInUser: (action.loggedInUser) ? action.loggedInUser : null
             }
-        case 'SET_USER_MOVES':
+        case 'ADD_MOVE':
             return {
                 ...state,
-                loggedInUser: { ...state.loggedInUser, moves: action.moves }
+                loggedInUser: { ...state.loggedInUser, moves: action.moves, coins: action.coins }
             }
 
         default:

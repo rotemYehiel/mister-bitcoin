@@ -22,7 +22,8 @@ export function signUp(newUser) {
 export function addMove(contact, amount) {
     return async dispatch => {
         const loggedInUser = await UserService.addMove(contact, amount);
-        const moves = loggedInUser.moves
-        dispatch({ type: 'SET_USER_MOVES', moves })
+        const moves = loggedInUser.moves;
+        const coins = loggedInUser.coins;
+        dispatch({ type: 'ADD_MOVE', moves, coins })
     }
 }

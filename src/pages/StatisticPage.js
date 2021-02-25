@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import BitcoinService from '../services/bitcoin.service'
 import Chart from '../cmps/Chart'
 
-const StatisticPage = () => {
+const StatisticPage = (props) => {
     const [marketPrice, setMarketPrice] = useState(null)
     const [confirmedTransactions, setConfirmedTransactions] = useState(null)
 

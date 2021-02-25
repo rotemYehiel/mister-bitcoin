@@ -21,6 +21,7 @@ const SignUp = (props) => {
         setName('');
         setPassword('');
     }
+
     return (
         <div className="sign-up-page page">
             <h2 className="page-header">Sign up:</h2>

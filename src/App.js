@@ -45,12 +45,12 @@ const App = (props) => {
         <MainHeader />
         <main>
           <Switch>
-            <Route path="/" exact component={HomePage} loggedInUser={loggedInUser} />
-            <Route path="/Contact" exact component={ContactPage} loggedInUser={loggedInUser} />
-            <Route path="/Contact/Edit/:id?" component={ContactEditPage} loggedInUser={loggedInUser} />
-            <Route path="/Contact/:id" component={ContactDetails} loggedInUser={loggedInUser} />
-            <Route path="/Statistic" component={StatisticPage} loggedInUser={loggedInUser} />
-            <Route path="/SignUp" component={SignUpPage} loggedInUser={loggedInUser} />
+            <Route path="/" exact component={HomePage} />
+            <Route path="/Contact" exact component={ContactPage} />
+            <Route path="/Contact/Edit/:id?" component={ContactEditPage} />
+            <Route path="/Contact/:id" component={ContactDetails} />
+            <Route path="/Statistic" component={StatisticPage} />
+            <Route path="/SignUp" component={SignUpPage} />
           </Switch>
         </main>
       </Router>
