@@ -25,6 +25,8 @@ library.add(fab)
 const history = createBrowserHistory();
 
 const App = (props) => {
+  console.log("App props:", props)
+
   const { loggedInUser, rate } = props;
   const dispatch = useDispatch()
 

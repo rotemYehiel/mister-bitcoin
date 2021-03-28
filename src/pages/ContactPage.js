@@ -12,6 +12,8 @@ import ContactFilter from '../cmps/ContactFilter'
 import ContactList from '../cmps/ContactList'
 
 const ContactPage = (props) => {
+    console.log("ContactPage props:", props)
+
     const { contacts, loggedInUser } = props;
     const [filterBy, setFilterBy] = useState({ term: '' })
     const dispatch = useDispatch()

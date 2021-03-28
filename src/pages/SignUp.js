@@ -6,6 +6,7 @@ import { signUp } from '../actions/UserAction'
 
 
 const SignUp = (props) => {
+    console.log("SignUp props:", props)
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const dispatch = useDispatch()

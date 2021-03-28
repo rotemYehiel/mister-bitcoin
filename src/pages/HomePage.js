@@ -12,6 +12,8 @@ import bitcoinGif from '../assets/imgs/bitcoin-gif.gif'
 import MovesList from '../cmps/MovesList'
 
 const HomePage = (props) => {
+    console.log("HomePage props:", props)
+
     const { loggedInUser, rate } = props;
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
