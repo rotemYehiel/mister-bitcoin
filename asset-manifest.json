@@ -1,24 +1,18 @@
 {
   "files": {
-    "main.css": "/mister-bitcoin/static/css/main.ee65ac76.chunk.css",
-    "main.js": "/mister-bitcoin/static/js/main.63ed1350.chunk.js",
-    "main.js.map": "/mister-bitcoin/static/js/main.63ed1350.chunk.js.map",
-    "runtime-main.js": "/mister-bitcoin/static/js/runtime-main.c697e83d.js",
-    "runtime-main.js.map": "/mister-bitcoin/static/js/runtime-main.c697e83d.js.map",
-    "static/js/2.1769a7c5.chunk.js": "/mister-bitcoin/static/js/2.1769a7c5.chunk.js",
-    "static/js/2.1769a7c5.chunk.js.map": "/mister-bitcoin/static/js/2.1769a7c5.chunk.js.map",
-    "static/js/3.cfdc4d9b.chunk.js": "/mister-bitcoin/static/js/3.cfdc4d9b.chunk.js",
-    "static/js/3.cfdc4d9b.chunk.js.map": "/mister-bitcoin/static/js/3.cfdc4d9b.chunk.js.map",
+    "main.css": "/mister-bitcoin/static/css/main.46bb884b.css",
+    "main.js": "/mister-bitcoin/static/js/main.49d4817e.js",
+    "static/js/787.667256dc.chunk.js": "/mister-bitcoin/static/js/787.667256dc.chunk.js",
+    "static/media/bitcoin-gif.gif": "/mister-bitcoin/static/media/bitcoin-gif.40cb03d6f1cfeff46c6a.gif",
+    "static/media/Roboto-Regular.ttf": "/mister-bitcoin/static/media/Roboto-Regular.03523cf578d69fa92322.ttf",
+    "static/media/Roboto-Bold.ttf": "/mister-bitcoin/static/media/Roboto-Bold.4f39c5796e60c9d8e732.ttf",
     "index.html": "/mister-bitcoin/index.html",
-    "static/css/main.ee65ac76.chunk.css.map": "/mister-bitcoin/static/css/main.ee65ac76.chunk.css.map",
-    "static/js/2.1769a7c5.chunk.js.LICENSE.txt": "/mister-bitcoin/static/js/2.1769a7c5.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/mister-bitcoin/static/media/Roboto-Regular.03523cf5.ttf",
-    "static/media/bitcoin-gif.40cb03d6.gif": "/mister-bitcoin/static/media/bitcoin-gif.40cb03d6.gif"
+    "main.46bb884b.css.map": "/mister-bitcoin/static/css/main.46bb884b.css.map",
+    "main.49d4817e.js.map": "/mister-bitcoin/static/js/main.49d4817e.js.map",
+    "787.667256dc.chunk.js.map": "/mister-bitcoin/static/js/787.667256dc.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.c697e83d.js",
-    "static/js/2.1769a7c5.chunk.js",
-    "static/css/main.ee65ac76.chunk.css",
-    "static/js/main.63ed1350.chunk.js"
+    "static/css/main.46bb884b.css",
+    "static/js/main.49d4817e.js"
   ]
 }
