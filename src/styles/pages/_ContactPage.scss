@@ -1,0 +1,44 @@
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    form {
+        align-self: center;
+        input {
+            margin: 0;
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+    .add-contact-btn {
+        align-self: center;
+        border-radius: 0.25rem;
+        margin: 0.5rem 0;
+        .icon {
+            margin-left: 0.25rem;
+        }
+    }
+}
+
+@include for-narrow-layout {
+    .contact-page {
+        .add-contact-btn {
+            position: fixed;
+            bottom: 10vh;
+            right: 2vw;
+            border-radius: 50%;
+            width: 15vw;
+            height: 15vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            .text {
+                display: none;
+            }
+            .icon {
+                margin: 0;
+            }
+        }
+    }
+}
